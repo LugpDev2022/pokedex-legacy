@@ -1,7 +1,9 @@
+import { AppRouter } from './router/AppRouter';
+
 const PokedexApp = () => {
   return (
     <>
-      <h1>PokedexApp</h1>
+      <AppRouter />
     </>
   );
 };
