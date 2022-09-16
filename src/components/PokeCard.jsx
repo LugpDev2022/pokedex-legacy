@@ -1,18 +1,31 @@
-export const PokeCard = () => {
-  const bulbasur = {
-    imgURL:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-    pokeName: 'Bulbasur',
-    pokeIndex: '1',
-  };
+import { useEffect } from 'react';
+import { useState } from 'react';
+
+export const PokeCard = ({ pokemon }) => {
+  const [{ sprite, id, name }, setPokemonData] = useState({
+    id: '',
+    name: '',
+    sprite: '',
+  });
+
+  useEffect(() => {
+    const getPokemonData = async () => {
+      const response = await fetch(pokemon.url);
+
+      const { id, name, sprites } = await response.json();
+      setPokemonData({ id, name, sprite: sprites.front_default });
+    };
+
+    getPokemonData();
+  }, []);
 
   return (
     <div className='col-12 col-sm-6 col-lg-3 mt-4'>
       <div className='card card-img-top'>
-        <img src={bulbasur.imgURL} alt='Pokemon Image' />
+        <img src={sprite} alt='Pokemon Image' />
         <div className='card-body'>
-          <h5 className='card-title'>{bulbasur.pokeName}</h5>
-          <p className='card-text'>Index: {bulbasur.pokeIndex}</p>
+          <h4 className='card-title text-capitalize'>{name}</h4>
+          <span className='card-text'>Index: {id}</span>
         </div>
       </div>
     </div>
