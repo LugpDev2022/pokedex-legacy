@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   return (
     <div
-      className='navbar navbar-expand-md navbar-light py-3'
+      className='navbar navbar-expand-md navbar-light'
       style={{ backgroundColor: '#5986fd' }}
     >
       <div className='container justify-content-between'>
@@ -45,7 +45,7 @@ export const Navbar = () => {
         >
           <div className='navbar-nav d-flex align-items-center gap-4'>
             <button onClick={onClickSearch} className='btn'>
-              <FaSearch className='d-none d-md-block fs-2' />
+              <FaSearch className='d-none d-md-block fs-3' />
               <span className='d-md-none '>Search pokemon</span>
             </button>
 
@@ -54,16 +54,16 @@ export const Navbar = () => {
                 onClick={onLogInClick}
                 className='btn btn-outline-dark d-flex align-items-center gap-2'
               >
-                <BiUser className='fs-1' />
-                <span className='fs-4'>Account</span>
+                <BiUser className='fs-2' />
+                <span className='fs-5'>Account</span>
               </button>
             ) : (
               <button
                 onClick={onLogInClick}
                 className='btn btn-outline-dark d-flex align-items-center gap-2'
               >
-                <BiLogIn className='fs-2' />
-                <span className='fs-4'>Log In</span>
+                <BiLogIn className='fs-3' />
+                <span className='fs-5'>Log In</span>
               </button>
             )}
           </div>
