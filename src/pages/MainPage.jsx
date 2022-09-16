@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { PokeCard } from '../components/PokeCard';
+import { PokeCard } from '../components';
 
 export const MainPage = () => {
   const [pokemons, setPokemons] = useState([]);
