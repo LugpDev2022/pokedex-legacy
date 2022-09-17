@@ -1,38 +1,10 @@
-import { useEffect, useState } from 'react';
-import { PokeCard } from '../../components/PokeCard';
+import { PokeCard } from '../../components';
+import { usePokemon } from '../hooks';
 
 export const PokeCardGrid = () => {
-  const [pokemonDataArray, setPokemonDataArray] = useState([]);
+  const { pokemons } = usePokemon();
 
-  const [pokemons, setPokemons] = useState([]);
-
-  //TODO: Get page from context
-  const page = 1;
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=8&offset=${
-    (page - 1) * 8
-  }`;
-
-  useEffect(() => {
-    const getPokemons = async () => {
-      const response = await fetch(url);
-      const { results } = await response.json();
-      setPokemonDataArray(results);
-    };
-    getPokemons();
-  }, []);
-
-  useEffect(() => {
-    const getPokemons = async () => {
-      const pokemons2 = await Promise.all(
-        pokemonDataArray.map(item => {
-          return fetch(item.url).then(response => response.json());
-        })
-      );
-      setPokemons(pokemons2);
-    };
-    getPokemons();
-  }, [pokemonDataArray]);
-
+  //TODO: Show spinner while chargins
   return (
     <div className='container px-5 mt-2'>
       <div className='row justify-content-between'>
