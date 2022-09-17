@@ -1,12 +1,13 @@
-import { ContextProvider } from './context';
 import { AppRouter } from './router';
 import { Navbar } from './ui';
 
-const PokedexApp = () => (
-  <ContextProvider>
-    <Navbar />
-    <AppRouter />
-  </ContextProvider>
-);
+const PokedexApp = () => {
+  return (
+    <>
+      <Navbar />
+      <AppRouter />
+    </>
+  );
+};
 
 export default PokedexApp;

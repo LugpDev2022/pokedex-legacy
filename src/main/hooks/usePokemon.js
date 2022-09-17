@@ -1,10 +1,7 @@
-import { useContext } from 'react';
-
 import { useEffect, useState } from 'react';
-import { AppContext } from '../../context';
 
 export const usePokemon = () => {
-  const { page } = useContext(AppContext);
+  const page = 1;
 
   const [pokemonDataArray, setPokemonDataArray] = useState([]);
 
