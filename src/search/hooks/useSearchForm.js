@@ -9,6 +9,7 @@ export const useSearchForm = () => {
 
   const navigate = useNavigate();
 
+  //TODO: Add limitations when submit
   const onSearchPokemonByName = e => {
     e.preventDefault();
     navigate(`?pokemon=${pokemonName}`);
