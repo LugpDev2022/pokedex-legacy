@@ -1,12 +1,15 @@
+import { useContext } from 'react';
+
 import { useEffect, useState } from 'react';
+import { AppContext } from '../../context';
 
 export const usePokemon = () => {
+  const { page } = useContext(AppContext);
+
   const [pokemonDataArray, setPokemonDataArray] = useState([]);
 
   const [pokemons, setPokemons] = useState([]);
 
-  //TODO: Get page from context
-  const page = 1;
   const url = `https://pokeapi.co/api/v2/pokemon?limit=8&offset=${
     (page - 1) * 8
   }`;
