@@ -1,19 +1,14 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSearchForm } from '../hooks/useSearchForm';
 
 export const SearchForm = () => {
-  const navigate = useNavigate();
-
-  const onSearchByID = e => {
-    e.preventDefault();
-    console.log('Buscando por ID');
-  };
-
-  const [formData, setFormData] = useState('');
-
-  const onInputName = ({ target }) => {
-    setFormData(target.value);
-  };
+  const {
+    onInputID,
+    onInputName,
+    onSearchPokemonByID,
+    onSearchPokemonByName,
+    pokemonID,
+    pokemonName,
+  } = useSearchForm();
 
   return (
     <>
@@ -21,15 +16,35 @@ export const SearchForm = () => {
         Search By Name
       </label>
       <hr className='mt-1' />
-      <form onSubmit={onSearchByID} className='d-flex gap-2'>
+      <form onSubmit={onSearchPokemonByName} className='d-flex gap-2'>
         <input
           type='Name'
           className='form-control'
           placeholder='Pokémon Name'
           id='searchByName'
           name='searchByName'
-          value={formData}
+          value={pokemonName}
           onChange={onInputName}
+        />
+
+        <button type='submit' className='btn btn-primary'>
+          Search
+        </button>
+      </form>
+
+      <label htmlFor='searchByID' className='h4 mt-4'>
+        Search By ID
+      </label>
+      <hr className='mt-1' />
+      <form onSubmit={onSearchPokemonByID} className='d-flex gap-2'>
+        <input
+          type='Name'
+          className='form-control'
+          placeholder='Pokémon ID'
+          id='searchByID'
+          name='searchByID'
+          value={pokemonID}
+          onChange={onInputID}
         />
 
         <button type='submit' className='btn btn-primary'>
