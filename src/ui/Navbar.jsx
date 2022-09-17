@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { FaSearch } from 'react-icons/fa';
 import { BiUser, BiLogIn } from 'react-icons/bi';
@@ -8,14 +8,8 @@ import { BiUser, BiLogIn } from 'react-icons/bi';
 export const Navbar = () => {
   const [logged, setLogged] = useState(false);
 
-  const navigate = useNavigate();
-
   const onLogInClick = () => {
     setLogged(!logged);
-  };
-
-  const onClickSearch = () => {
-    navigate('/search');
   };
 
   return (
@@ -44,10 +38,13 @@ export const Navbar = () => {
           id='navbarContent'
         >
           <div className='navbar-nav d-flex align-items-center gap-4'>
-            <button onClick={onClickSearch} className='btn'>
-              <FaSearch className='d-none d-md-block fs-3' />
-              <span className='d-md-none '>Search pokemon</span>
-            </button>
+            <Link to='/search' className='text-dark text-decoration-none'>
+              <FaSearch className='fs-3 d-none d-md-block' />
+
+              <span className='btn btn-outline-dark mt-3 d-block d-md-none'>
+                Search a Pokémon
+              </span>
+            </Link>
 
             {logged ? (
               <button
