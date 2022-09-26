@@ -1,13 +1,11 @@
 import { AppRouter } from './router';
 import { Navbar } from './ui';
 
-const PokedexApp = () => {
-  return (
-    <>
-      <Navbar />
-      <AppRouter />
-    </>
-  );
-};
+const PokedexApp = () => (
+  <>
+    <Navbar />
+    <AppRouter />
+  </>
+);
 
 export default PokedexApp;

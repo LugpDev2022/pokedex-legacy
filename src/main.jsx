@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { BrowserRouter } from 'react-router-dom';
+
 import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import PokedexApp from './PokedexApp';
-import { BrowserRouter } from 'react-router-dom';
-
+import { PokemonProvider } from './context/PokemonProvider';
 import './styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <PokedexApp />
-    </BrowserRouter>
+    <PokemonProvider>
+      <BrowserRouter>
+        <PokedexApp />
+      </BrowserRouter>
+    </PokemonProvider>
   </React.StrictMode>
 );
