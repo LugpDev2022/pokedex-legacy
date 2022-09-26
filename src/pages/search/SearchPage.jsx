@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 
-import { PokeCard } from '../components';
+import { PokeCard } from '../../components';
+import { pokemonApi } from '../../api/pokemonApi';
 import { SearchForm } from './';
-import { pokemonApi } from '../api/pokemonApi';
 
 export const SearchPage = () => {
   const [searchedPokemon, setSearchedPokemon] = useState();

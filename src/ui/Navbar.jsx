@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
-
 import { FaSearch } from 'react-icons/fa';
 import { BiUser, BiLogIn } from 'react-icons/bi';
 

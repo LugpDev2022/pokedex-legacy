@@ -1,11 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { MainPage } from '../main/MainPage';
-import { SearchPage } from '../search';
+import { HomePage, SearchPage } from '../pages';
 
 export const AppRouter = () => (
   <Routes>
-    <Route path='/' element={<MainPage />} />
+    <Route path='/' element={<HomePage />} />
     <Route path='search' element={<SearchPage />} />
 
     <Route path='/*' element={<Navigate to='/' />} />
