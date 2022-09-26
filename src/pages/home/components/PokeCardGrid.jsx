@@ -7,7 +7,7 @@ export const PokeCardGrid = () => {
   //TODO: Show spinner while chargins
   return (
     <div className='container px-5 mt-2'>
-      <div className='row justify-content-between'>
+      <div className='row justify-content-between px-3'>
         {pokemons.map(pokemon => {
           return <PokeCard key={pokemon.name} pokemon={pokemon} />;
         })}
