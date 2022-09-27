@@ -1,4 +1,4 @@
-import { useSearchForm } from '../';
+import { useSearchForm } from '../hooks';
 
 export const SearchForm = () => {
   const {

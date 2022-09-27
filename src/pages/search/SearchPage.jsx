@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 
 import { PokeCard } from '../../components';
-import { pokemonApi } from '../../api/pokemonApi';
-import { SearchForm } from './';
+import { pokemonApi } from '../../api';
+import { SearchForm } from './components';
 
 export const SearchPage = () => {
   const [searchedPokemon, setSearchedPokemon] = useState();

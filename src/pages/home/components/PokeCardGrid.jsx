@@ -1,5 +1,5 @@
 import { PokeCard } from '../../../components';
-import { usePokemon } from '../';
+import { usePokemon } from '../hooks';
 
 export const PokeCardGrid = () => {
   const { pokemons } = usePokemon();

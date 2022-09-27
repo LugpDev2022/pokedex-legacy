@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from 'react';
 
-import { pokemonApi } from '../../../api/pokemonApi';
-import { PokemonContext } from '../../../context/PokemonContext';
+import { pokemonApi } from '../../../api';
+import { PokemonContext } from '../../../context';
 
 export const usePokemon = () => {
-  const { page } = useContext(PokemonContext);
+  const { state } = useContext(PokemonContext);
+  const { page } = state;
 
   const [pokemonDataArray, setPokemonDataArray] = useState([]);
   const [pokemons, setPokemons] = useState([]);
@@ -17,7 +18,7 @@ export const usePokemon = () => {
       setPokemonDataArray(data.results);
     };
     getPokemons();
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     const getPokemons = async () => {

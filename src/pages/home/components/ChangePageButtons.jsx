@@ -1,20 +1,13 @@
 import { useContext } from 'react';
-
-import { PokemonContext } from '../../../context/PokemonContext';
+import { PokemonContext } from '../../../context';
 
 export const ChangePageButtons = () => {
-  const { page } = useContext(PokemonContext);
+  const { page, onNextPage } = useContext(PokemonContext);
 
-  const onNextPage = () => {
-    console.log('Next Page');
-  };
-
-  const onPrevPage = () => {
-    console.log('Prev Page');
-  };
+  const onPrevPage = () => {};
 
   return (
-    <div className='row my-4'>
+    <div className='row my-3'>
       <div className='col d-flex justify-content-center'>
         <div className='btn-group'>
           <button
