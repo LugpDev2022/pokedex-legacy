@@ -1,7 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+
+import { PokemonContext } from '../../../context/PokemonContext';
 
 export const ChangePageButtons = () => {
-  const navigate = useNavigate();
+  const { page } = useContext(PokemonContext);
 
   const onNextPage = () => {
     console.log('Next Page');
@@ -24,7 +26,7 @@ export const ChangePageButtons = () => {
             Previous
           </button>
           <div className='btn p-2' style={{ backgroundColor: '#5986fd' }}>
-            Page: 1
+            Page: {page}
           </div>
           <button
             type='button'

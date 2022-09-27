@@ -1,11 +1,13 @@
 import { PokemonContext } from './PokemonContext';
 
 export const PokemonProvider = ({ children }) => {
-  const si = {
-    hola: 'mundo',
+  const initialState = {
+    page: 1,
   };
 
   return (
-    <PokemonContext.Provider value={si}>{children}</PokemonContext.Provider>
+    <PokemonContext.Provider value={initialState}>
+      {children}
+    </PokemonContext.Provider>
   );
 };

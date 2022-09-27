@@ -12,10 +12,10 @@ import './styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <PokemonProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <PokemonProvider>
         <PokedexApp />
-      </BrowserRouter>
-    </PokemonProvider>
+      </PokemonProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
