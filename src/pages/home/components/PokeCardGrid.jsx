@@ -1,10 +1,12 @@
+import { useContext } from 'react';
+
 import { PokeCard } from '../../../components';
-import { usePokemon } from '../hooks';
+import { PokemonContext } from '../../../context';
 
 export const PokeCardGrid = () => {
-  const { pokemons } = usePokemon();
+  const { state } = useContext(PokemonContext);
+  const { pokemons } = state;
 
-  //TODO: Show spinner while chargins
   return (
     <div className='col-12 col-lg-10 order-0'>
       <div className='container'>
