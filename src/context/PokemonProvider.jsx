@@ -4,6 +4,7 @@ import { PokemonContext, pokemonReducer, types } from './';
 export const PokemonProvider = ({ children }) => {
   const initialState = {
     page: 1,
+    arePokemonsCharging: true,
   };
 
   const [state, dispatch] = useReducer(pokemonReducer, initialState);
