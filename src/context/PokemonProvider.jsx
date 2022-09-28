@@ -3,21 +3,25 @@ import { PokemonContext, pokemonReducer, types } from './';
 
 export const PokemonProvider = ({ children }) => {
   const initialState = {
-    page: 1,
     arePokemonsCharging: true,
   };
 
   const [state, dispatch] = useReducer(pokemonReducer, initialState);
 
-  const onNextPage = () => {
+  const chargePokemons = () => {
     const action = {
-      type: types.nextPage,
+      type: types.dataCharged,
     };
     dispatch(action);
   };
 
   return (
-    <PokemonContext.Provider value={{ state, onNextPage }}>
+    <PokemonContext.Provider
+      value={{
+        state,
+        chargePokemons,
+      }}
+    >
       {children}
     </PokemonContext.Provider>
   );

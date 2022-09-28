@@ -3,10 +3,15 @@ import { useContext } from 'react';
 import { PokemonContext } from '../../context';
 import { ChangePageButton, PokeCardGrid } from './components';
 import { Spinner } from '../../ui';
+import { useEffect } from 'react';
 
 export const HomePage = () => {
-  const { state } = useContext(PokemonContext);
+  const { state, chargePokemons } = useContext(PokemonContext);
   const { arePokemonsCharging } = state;
+
+  useEffect(() => {
+    chargePokemons();
+  }, []);
 
   const Page = () => (
     <div className='row justify-content-between'>
