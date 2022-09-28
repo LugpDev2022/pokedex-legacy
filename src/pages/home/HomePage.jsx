@@ -15,7 +15,7 @@ export const HomePage = () => {
   }, [pokemons]);
 
   const Page = () => (
-    <div className='row justify-content-between'>
+    <div className='row justify-content-between animate__animated animate__fadeIn'>
       <ChangePageButton location='left' />
       <PokeCardGrid />
       <ChangePageButton location='right' />

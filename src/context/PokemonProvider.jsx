@@ -6,6 +6,7 @@ export const PokemonProvider = ({ children }) => {
     const initialState = {
       arePokemonsCharging: true,
       pokemons: [],
+      page: 1,
     };
 
     return initialState;

@@ -9,7 +9,6 @@ import { SearchForm } from './components';
 
 export const SearchPage = () => {
   const [searchedPokemon, setSearchedPokemon] = useState();
-
   const [cardPokemon, setCardPokemon] = useState();
 
   const { search } = useLocation();
@@ -42,13 +41,7 @@ export const SearchPage = () => {
         <div className='col-12 col-lg-6'>
           <SearchForm />
         </div>
-        <div className='col-12 col-lg-6 d-flex justify-content-center'>
-          {cardPokemon !== undefined ? (
-            <PokeCard pokemon={cardPokemon} search={true} />
-          ) : (
-            <div className='alert bg-danger'>Pokemon no encontrado</div>
-          )}
-        </div>
+        <div className='col-12 col-lg-6 d-flex justify-content-center'></div>
       </div>
     </div>
   );
