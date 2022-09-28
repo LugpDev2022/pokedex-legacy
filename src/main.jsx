@@ -11,11 +11,11 @@ import { PokemonProvider } from './context/PokemonProvider';
 import './styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <PokemonProvider>
-        <PokedexApp />
-      </PokemonProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <PokemonProvider>
+      <PokedexApp />
+    </PokemonProvider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );

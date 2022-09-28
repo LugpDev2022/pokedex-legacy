@@ -1,17 +1,18 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
-import { PokemonContext } from '../../context';
 import { ChangePageButton, PokeCardGrid } from './components';
+import { PokemonContext } from '../../context';
 import { Spinner } from '../../ui';
-import { useEffect } from 'react';
+import { usePokemon } from './hooks';
 
 export const HomePage = () => {
   const { state, chargePokemons } = useContext(PokemonContext);
   const { arePokemonsCharging } = state;
+  const { pokemons } = usePokemon();
 
   useEffect(() => {
-    chargePokemons();
-  }, []);
+    chargePokemons(pokemons);
+  }, [pokemons]);
 
   const Page = () => (
     <div className='row justify-content-between'>

@@ -2,15 +2,22 @@ import { useReducer } from 'react';
 import { PokemonContext, pokemonReducer, types } from './';
 
 export const PokemonProvider = ({ children }) => {
-  const initialState = {
-    arePokemonsCharging: true,
+  const init = () => {
+    const initialState = {
+      arePokemonsCharging: true,
+      pokemons: [],
+    };
+
+    return initialState;
   };
+  const [state, dispatch] = useReducer(pokemonReducer, {}, init);
 
-  const [state, dispatch] = useReducer(pokemonReducer, initialState);
-
-  const chargePokemons = () => {
+  const chargePokemons = pokemons => {
     const action = {
-      type: types.dataCharged,
+      type: types.chargeData,
+      payload: {
+        pokemons,
+      },
     };
     dispatch(action);
   };

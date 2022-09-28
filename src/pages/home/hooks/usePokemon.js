@@ -1,11 +1,8 @@
-import { useEffect, useState, useContext } from 'react';
-
+import { useEffect, useState } from 'react';
 import { pokemonApi } from '../../../api';
-import { PokemonContext } from '../../../context';
 
 export const usePokemon = () => {
-  const { state } = useContext(PokemonContext);
-  const { page } = state;
+  const page = 1;
 
   const [pokemonDataArray, setPokemonDataArray] = useState([]);
   const [pokemons, setPokemons] = useState([]);
@@ -17,6 +14,7 @@ export const usePokemon = () => {
       );
       setPokemonDataArray(data.results);
     };
+
     getPokemons();
   }, [page]);
 
