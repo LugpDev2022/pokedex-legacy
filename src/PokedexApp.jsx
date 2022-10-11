@@ -1,5 +1,5 @@
 import { AppRouter } from './router';
-import { Navbar } from './ui';
+import { Navbar } from './components';
 
 const PokedexApp = () => (
   <>
