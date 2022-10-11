@@ -1,28 +1,15 @@
 import { useReducer } from 'react';
-
-import { useLocation } from 'react-router-dom';
-import queryString from 'query-string';
-
 import { PokemonContext, pokemonReducer, types } from './';
 
 export const PokemonProvider = ({ children }) => {
-  const { search } = useLocation();
-  const { page } = queryString.parse(search);
-
   const init = () => {
-    if (page === undefined) {
-      return {
-        arePokemonsCharging: true,
-        pokemons: [],
-        page: 1,
-      };
-    }
-
-    return {
+    const initialState = {
       arePokemonsCharging: true,
       pokemons: [],
-      page,
+      page: 1,
     };
+
+    return initialState;
   };
   const [state, dispatch] = useReducer(pokemonReducer, {}, init);
 
