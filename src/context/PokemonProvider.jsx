@@ -2,14 +2,30 @@ import { useReducer } from 'react';
 import { PokemonContext, pokemonReducer, types } from './';
 
 export const PokemonProvider = ({ children }) => {
-  const initialState = {
-    arePokemonsCharging: true,
-    pokemons: [],
-    page: 1,
-    logged: false,
+  const init = () => {
+    const page = localStorage.getItem('page');
+
+    const initialState = {
+      arePokemonsCharging: true,
+      pokemons: [],
+      page: 1,
+      logged: false,
+    };
+
+    if (page) {
+      return {
+        ...initialState,
+        page,
+      };
+    }
+
+    if (!page) {
+      localStorage.setItem('page', 1);
+      return initialState;
+    }
   };
 
-  const [state, dispatch] = useReducer(pokemonReducer, initialState);
+  const [state, dispatch] = useReducer(pokemonReducer, {}, init);
 
   const chargePokemons = pokemons => {
     const action = {
