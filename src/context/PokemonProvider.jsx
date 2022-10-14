@@ -12,17 +12,15 @@ export const PokemonProvider = ({ children }) => {
       logged: false,
     };
 
-    if (page) {
-      return {
-        ...initialState,
-        page,
-      };
-    }
-
     if (!page) {
       localStorage.setItem('page', 1);
       return initialState;
     }
+
+    return {
+      ...initialState,
+      page,
+    };
   };
 
   const [state, dispatch] = useReducer(pokemonReducer, {}, init);
@@ -38,10 +36,7 @@ export const PokemonProvider = ({ children }) => {
   };
 
   const onNextPage = () => {
-    const action = {
-      type: types.nextPage,
-    };
-    dispatch(action);
+    dispatch({ type: types.nextPage });
   };
 
   const onPrevPage = () => {
