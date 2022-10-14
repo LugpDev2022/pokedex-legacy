@@ -6,6 +6,7 @@ export const PokemonProvider = ({ children }) => {
     arePokemonsCharging: true,
     pokemons: [],
     page: 1,
+    logged: false,
   };
 
   const [state, dispatch] = useReducer(pokemonReducer, initialState);

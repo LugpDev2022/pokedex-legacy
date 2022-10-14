@@ -1,15 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa';
 import { BiUser, BiLogIn } from 'react-icons/bi';
+import { FaSearch } from 'react-icons/fa';
+
+import { PokemonContext } from '../context';
 
 export const Navbar = () => {
-  const [logged, setLogged] = useState(false);
-
-  const onLogInClick = () => {
-    setLogged(!logged);
-  };
+  const { logged } = useContext(PokemonContext);
 
   return (
     <div
@@ -46,18 +44,12 @@ export const Navbar = () => {
             </Link>
 
             {logged ? (
-              <button
-                onClick={onLogInClick}
-                className='btn btn-outline-dark d-flex align-items-center gap-2'
-              >
+              <button className='btn btn-outline-dark d-flex align-items-center gap-2'>
                 <BiUser className='fs-2' />
                 <span className='fs-5'>Account</span>
               </button>
             ) : (
-              <button
-                onClick={onLogInClick}
-                className='btn btn-outline-dark d-flex align-items-center gap-2'
-              >
+              <button className='btn btn-outline-dark d-flex align-items-center gap-2'>
                 <BiLogIn className='fs-3' />
                 <span className='fs-5'>Log In</span>
               </button>
