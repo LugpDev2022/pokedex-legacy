@@ -9,6 +9,13 @@ export const pokemonReducer = (state, action) => {
         pokemons: action.payload.pokemons,
       };
 
+    case types.nextPage:
+      return {
+        ...state,
+        arePokemonsCharging: true,
+        page: state.page + 1,
+      };
+
     default:
       return state;
   }

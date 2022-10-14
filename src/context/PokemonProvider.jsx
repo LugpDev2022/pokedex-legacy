@@ -21,11 +21,19 @@ export const PokemonProvider = ({ children }) => {
     dispatch(action);
   };
 
+  const nextPage = () => {
+    const action = {
+      type: types.nextPage,
+    };
+    dispatch(action);
+  };
+
   return (
     <PokemonContext.Provider
       value={{
         ...state,
         chargePokemons,
+        nextPage,
       }}
     >
       {children}
