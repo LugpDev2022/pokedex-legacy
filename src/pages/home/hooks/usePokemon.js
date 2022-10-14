@@ -16,7 +16,6 @@ export const usePokemon = () => {
       );
       setPokemonDataArray(data.results);
     };
-
     getPokemons();
   }, [page]);
 
