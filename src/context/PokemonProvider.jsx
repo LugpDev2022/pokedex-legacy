@@ -21,11 +21,17 @@ export const PokemonProvider = ({ children }) => {
     dispatch(action);
   };
 
-  const nextPage = () => {
+  const onNextPage = () => {
     const action = {
       type: types.nextPage,
     };
     dispatch(action);
+  };
+
+  const onPrevPage = () => {
+    if (state.page > 1) {
+      dispatch({ type: types.prevPage });
+    }
   };
 
   return (
@@ -33,7 +39,8 @@ export const PokemonProvider = ({ children }) => {
       value={{
         ...state,
         chargePokemons,
-        nextPage,
+        onNextPage,
+        onPrevPage,
       }}
     >
       {children}

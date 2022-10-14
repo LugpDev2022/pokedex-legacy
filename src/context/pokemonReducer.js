@@ -16,6 +16,13 @@ export const pokemonReducer = (state, action) => {
         page: state.page + 1,
       };
 
+    case types.prevPage:
+      return {
+        ...state,
+        arePokemonsCharging: true,
+        page: state.page - 1,
+      };
+
     default:
       return state;
   }

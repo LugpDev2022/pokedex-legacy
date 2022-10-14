@@ -6,7 +6,7 @@ import {
 import { PokemonContext } from '../../../context';
 
 export const ChangePageButton = ({ location }) => {
-  const { nextPage } = useContext(PokemonContext);
+  const { onPrevPage, onNextPage } = useContext(PokemonContext);
 
   if (location === 'left') {
     return (
@@ -14,6 +14,7 @@ export const ChangePageButton = ({ location }) => {
         <BsFillArrowLeftCircleFill
           className='h1'
           style={{ color: '#5986fd', fontSize: '50px' }}
+          onClick={onPrevPage}
         />
       </div>
     );
@@ -25,7 +26,7 @@ export const ChangePageButton = ({ location }) => {
         <BsFillArrowRightCircleFill
           className='h1'
           style={{ color: '#5986fd', fontSize: '50px' }}
-          onClick={nextPage}
+          onClick={onNextPage}
         />
       </div>
     );
