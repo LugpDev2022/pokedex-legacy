@@ -16,7 +16,7 @@ export const SearchForm = () => {
         Search By Name
       </label>
       <hr className='mt-1' />
-      <form onSubmit={onSearchPokemonByName} className='d-flex gap-2'>
+      <form onSubmit={onSearchPokemonByName} className='input-group'>
         <input
           type='Name'
           className='form-control'
@@ -36,7 +36,7 @@ export const SearchForm = () => {
         Search By ID
       </label>
       <hr className='mt-1' />
-      <form onSubmit={onSearchPokemonByID} className='d-flex gap-2'>
+      <form onSubmit={onSearchPokemonByID} className='input-group'>
         <input
           type='Name'
           className='form-control'
