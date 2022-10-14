@@ -2,7 +2,7 @@ import { types } from './types/types';
 
 export const pokemonReducer = (state, action) => {
   switch (action.type) {
-    case types.chargeData:
+    case types.chargePokemons:
       return {
         ...state,
         arePokemonsCharging: false,

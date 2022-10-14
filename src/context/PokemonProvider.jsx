@@ -12,7 +12,7 @@ export const PokemonProvider = ({ children }) => {
 
   const chargePokemons = pokemons => {
     const action = {
-      type: types.chargeData,
+      type: types.chargePokemons,
       payload: {
         pokemons,
       },
