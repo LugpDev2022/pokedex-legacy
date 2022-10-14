@@ -6,8 +6,7 @@ import { Spinner } from '../../ui';
 import { usePokemon } from './hooks';
 
 export const HomePage = () => {
-  const { state, chargePokemons } = useContext(PokemonContext);
-  const { arePokemonsCharging } = state;
+  const { arePokemonsCharging, chargePokemons } = useContext(PokemonContext);
   const { pokemons } = usePokemon();
 
   useEffect(() => {

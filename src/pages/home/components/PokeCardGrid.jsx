@@ -4,8 +4,7 @@ import { PokeCard } from '../../../components';
 import { PokemonContext } from '../../../context';
 
 export const PokeCardGrid = () => {
-  const { state } = useContext(PokemonContext);
-  const { pokemons } = state;
+  const { pokemons } = useContext(PokemonContext);
 
   return (
     <div className='col-12 col-lg-10 order-0'>

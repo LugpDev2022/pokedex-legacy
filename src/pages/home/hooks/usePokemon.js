@@ -4,8 +4,7 @@ import { pokemonApi } from '../../../api';
 import { PokemonContext } from '../../../context';
 
 export const usePokemon = () => {
-  const { state } = useContext(PokemonContext);
-  const { page } = state;
+  const { page } = useContext(PokemonContext);
 
   const [pokemonDataArray, setPokemonDataArray] = useState([]);
   const [pokemons, setPokemons] = useState([]);
