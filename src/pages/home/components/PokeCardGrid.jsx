@@ -11,7 +11,7 @@ export const PokeCardGrid = () => {
       <div className='container'>
         <div className='row justify-content-between px-3'>
           {pokemons.map(pokemon => (
-            <PokeCard key={pokemon.name} pokemon={pokemon} />
+            <PokeCard key={pokemon.name} {...pokemon} />
           ))}
         </div>
       </div>

@@ -7,22 +7,22 @@ describe('Tests in <PokeCard />', () => {
     sprites: {
       front_default: 'https://chikorita.com/',
     },
-    id: '57',
+    id: 57,
   };
   test('should match with snapshot', () => {
-    const { container } = render(<PokeCard pokemon={pokemon} />);
+    const { container } = render(<PokeCard {...pokemon} />);
 
     expect(container).toMatchSnapshot();
   });
 
   test('should show the pokemon name', () => {
-    render(<PokeCard pokemon={pokemon} />);
+    render(<PokeCard {...pokemon} />);
 
     expect(screen.getByText(pokemon.name));
   });
 
   test('should show the given image', () => {
-    render(<PokeCard pokemon={pokemon} />);
+    render(<PokeCard {...pokemon} />);
     const { src, alt } = screen.getByRole('img');
 
     expect(src).toBe(pokemon.sprites.front_default);

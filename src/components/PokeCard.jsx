@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const PokeCard = ({ pokemon, search }) => {
-  const { name, sprites, id } = pokemon;
-
+export const PokeCard = ({ name, sprites, id, search }) => {
   return (
     <div
       className={`${
@@ -23,5 +21,8 @@ export const PokeCard = ({ pokemon, search }) => {
 };
 
 PokeCard.propTypes = {
-  pokemon: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  sprites: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
+  search: PropTypes.string,
 };
