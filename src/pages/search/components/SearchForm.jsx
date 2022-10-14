@@ -1,14 +1,8 @@
 import { useSearchForm } from '../hooks';
 
 export const SearchForm = () => {
-  const {
-    onInputID,
-    onInputName,
-    onSearchPokemonByID,
-    onSearchPokemonByName,
-    pokemonID,
-    pokemonName,
-  } = useSearchForm();
+  const { onInputID, onInputName, onSearchPokemon, pokemonID, pokemonName } =
+    useSearchForm();
 
   return (
     <>
@@ -16,7 +10,7 @@ export const SearchForm = () => {
         Search By Name
       </label>
       <hr className='mt-1' />
-      <form onSubmit={onSearchPokemonByName} className='input-group'>
+      <form onSubmit={onSearchPokemon} className='input-group'>
         <input
           type='Name'
           className='form-control'
@@ -36,7 +30,7 @@ export const SearchForm = () => {
         Search By ID
       </label>
       <hr className='mt-1' />
-      <form onSubmit={onSearchPokemonByID} className='input-group'>
+      <form onSubmit={onSearchPokemon} className='input-group'>
         <input
           type='Name'
           className='form-control'

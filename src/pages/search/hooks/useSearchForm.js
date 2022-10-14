@@ -8,19 +8,10 @@ export const useSearchForm = () => {
 
   const navigate = useNavigate();
 
-  const onSearchPokemonByName = e => {
+  const onSearchPokemon = e => {
     e.preventDefault();
     if (e.target[0].value.length >= 1) {
-      navigate(`?pokemon=${pokemonName}`);
-      return;
-    }
-    navigate('/search');
-  };
-
-  const onSearchPokemonByID = e => {
-    e.preventDefault();
-    if (e.target[0].value.length >= 1) {
-      navigate(`?pokemon=${pokemonID}`);
+      navigate(`?pokemon=${e.target[0].value}`);
       return;
     }
     navigate('/search');
@@ -37,9 +28,8 @@ export const useSearchForm = () => {
   return {
     onInputID,
     onInputName,
-    onSearchPokemonByID,
-    onSearchPokemonByName,
     pokemonID,
     pokemonName,
+    onSearchPokemon,
   };
 };
