@@ -6,6 +6,7 @@ import queryString from 'query-string';
 import { PokeCard } from '../../components';
 import { pokemonApi } from '../../api';
 import { SearchForm } from './components';
+import { SearchPokemonCard } from './ui/SearchPokemonCard';
 
 export const SearchPage = () => {
   const [searchedPokemon, setSearchedPokemon] = useState();
@@ -41,7 +42,9 @@ export const SearchPage = () => {
         <div className='col-12 col-lg-6'>
           <SearchForm />
         </div>
-        <div className='col-12 col-lg-6 d-flex justify-content-center'></div>
+        <div className='col-12 col-lg-6 d-flex justify-content-center'>
+          <SearchPokemonCard />
+        </div>
       </div>
     </div>
   );
