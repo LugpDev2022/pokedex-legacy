@@ -18,18 +18,18 @@ export const SearchPage = () => {
     setSearchedPokemon(pokemon);
   }, [search]);
 
-  useEffect(() => {
-    const getPokemonCard = async () => {
-      const { data } = await pokemonApi.get(`/pokemon/${searchedPokemon}`);
-      if (data) {
-        setCardPokemon(data);
-      }
-    };
+  // useEffect(() => {
+  //   const getPokemonCard = async () => {
+  //     const { data } = await pokemonApi.get(`/pokemon/${searchedPokemon}`);
+  //     if (data) {
+  //       setCardPokemon(data);
+  //     }
+  //   };
 
-    if (searchedPokemon) {
-      getPokemonCard();
-    }
-  }, [searchedPokemon]);
+  //   if (searchedPokemon) {
+  //     getPokemonCard();
+  //   }
+  // }, [searchedPokemon]);
 
   return (
     <div className='container'>
