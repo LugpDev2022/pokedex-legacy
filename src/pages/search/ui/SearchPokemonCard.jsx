@@ -1,7 +1,11 @@
 import pikachu from '../../../assets/images/pikachu.webp';
 
 export const SearchPokemonCard = () => (
-  <div className={'col-10 col-sm-8 col-md-6 col-lg-7'}>
+  <div
+    className={
+      'col-10 col-sm-8 col-md-6 col-lg-7 animate__animated animate__fadeIn'
+    }
+  >
     <div className='card card-img-top'>
       <img className='p-2' src={pikachu} alt='Pokemon Image' />
       <div className='card-body shadow p-2'>
