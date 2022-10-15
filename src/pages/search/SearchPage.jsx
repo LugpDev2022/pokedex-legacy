@@ -1,18 +1,11 @@
-import { useState, useEffect } from 'react';
-
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 
 import { SearchForm, ShowCards } from './components';
 
 export const SearchPage = () => {
-  const [searchedPokemon, setSearchedPokemon] = useState();
   const { search } = useLocation();
   const { pokemon } = queryString.parse(search);
-
-  useEffect(() => {
-    setSearchedPokemon(pokemon);
-  }, [pokemon]);
 
   return (
     <div className='container'>

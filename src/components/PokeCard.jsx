@@ -24,5 +24,5 @@ PokeCard.propTypes = {
   name: PropTypes.string.isRequired,
   sprites: PropTypes.object.isRequired,
   id: PropTypes.number.isRequired,
-  search: PropTypes.string,
+  search: PropTypes.bool,
 };
