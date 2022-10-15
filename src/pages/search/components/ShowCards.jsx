@@ -1,32 +1,9 @@
-import { useEffect, useState } from 'react';
-import { pokemonApi } from '../../../api';
 import { PokeCard } from '../../../components';
+import { useShowCardsState } from '../hooks/useShowCardsState';
 import { SearchPokemonCard } from '../ui';
 
 export const ShowCards = ({ pokemon }) => {
-  const [error, setError] = useState(false);
-  const [pokemonData, setPokemonData] = useState({});
-  const [isSearching, setIsSearching] = useState(false);
-
-  useEffect(() => {
-    setIsSearching(true);
-    if (pokemon) {
-      pokemonApi
-        .get(`pokemon/${pokemon}`)
-        .then(resp => {
-          setError(false);
-          setPokemonData(resp.data);
-          setIsSearching(false);
-        })
-        .catch(e => {
-          if (e.response.status === 404) {
-            setError(true);
-            setPokemonData({});
-            setIsSearching(false);
-          }
-        });
-    }
-  }, [pokemon]);
+  const { isSearching, pokemonData, error } = useShowCardsState(pokemon);
 
   if (pokemon === undefined) {
     return <SearchPokemonCard />;
